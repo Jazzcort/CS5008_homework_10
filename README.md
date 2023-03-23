@@ -28,7 +28,7 @@ Did you use any external resources (you do not have to cite in class material)? 
 3. What is the Worst Case Big O for searching or adding to a BST?
    * What type of BST would this be? (how would it look)
    - The Worst Case Big O for searching and adding to a BST would be $O(n)$.
-   - For adding, the worst case would be always adding a value that is smaller than the minimum value in the tree or always adding a value that is bigger than the maximum value in the tree. In this case, if we always add smaller value, we would end up having a BST look like this.
+   - For adding, the worst case would be always adding a value that is smaller than the minimum value in the tree or always adding a value that is bigger than the maximum value in the tree. In this case, if we always add smaller value, we would end up having a BST looking like this.
    ```test
    data: [5,4,3,2,1]
 
@@ -41,6 +41,20 @@ Did you use any external resources (you do not have to cite in class material)? 
       2
      /
     1
+   ```
+   - If we always add bigger values, we would end up having a BST looking like this.
+   ```test
+   data: [1,2,3,4,5]
+
+    1
+     \
+      2
+       \
+        3
+         \
+          4
+           \
+            5
    ```
 4. What are some of the advantages of a BST over a linked list?
 5. What are some cases / examples of when you would use a BST?
