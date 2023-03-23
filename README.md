@@ -22,7 +22,7 @@ Did you use any external resources (you do not have to cite in class material)? 
 ## BST Questions
 
 1. Given a *balanced* and *full* Binary Search Tree, what is the Big O for finding a value in the tree?
-- Because we 
+- For a balanced or full Binary Search Tree, the Big O for finding a value would depend on how many level this tree has. So the Big O would be $O(log(n))$
 2. Define balanced in relation to BSTs. Remember to relate it to height. 
 3. What is the Worst Case Big O for searching or adding to a BST?
    * What type of BST would this be? (how would it look)
