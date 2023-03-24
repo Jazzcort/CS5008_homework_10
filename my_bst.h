@@ -1,7 +1,7 @@
 /**
  * Contains information for a Binary Search Tree (BST) data structure.
- * @author YOUR NAME
- * Semester YOUR SEMESTER
+ * @author Chih-Tao Lee
+ * Semester Spring 2023
 */
 #ifndef MYBST_H 
 #define MYBST_H
@@ -46,8 +46,6 @@ BST * create_bst();
 
 // implemented in my_bst_printer.c - deals with the 'view' of the tree
 void bst_print(BST *tree, char* print_type); 
-
-
 
 
 #endif

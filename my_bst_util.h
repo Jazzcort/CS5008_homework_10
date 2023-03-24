@@ -1,7 +1,7 @@
 /**
  * Some standard utility functions for binary search trees.
- * @author YOUR NAME
- * Semester YOUR SEMESTER
+ * @author Chih-Tao Lee
+ * Semester Spring 2023
  */
 #ifndef MYBSTUTIL_H
 #define MYBSTUTIL_H
