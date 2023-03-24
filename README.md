@@ -56,9 +56,10 @@ Did you use any external resources (you do not have to cite in class material)? 
            \
             5
    ```
-   - In both cases, if we want to add a new value (following the rule) to the BST, we have to traverse all the way to the most left node or the most right node of the tree, which make the Big O $O(n)$.
+   - In both cases, if we want to add a new value (following the rule) to the BST, we have to traverse all the way to the most left node or the most right node of the tree, which make the Big O become $O(n)$.
 
    - For searching, due to we end up having a data structure similar to singly linked list, the Big O of searching would be $O(n)$.
 4. What are some of the advantages of a BST over a linked list?
+- In BST, the time complexity of search, insertion, and deletion is reduced to $O(log(n))$, which make it more efficient than linked list.
 5. What are some cases / examples of when you would use a BST?
 
