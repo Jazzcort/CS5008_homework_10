@@ -15,6 +15,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <string.h>
 
 #include "my_bst.h"
 #include "my_bst_util.h"
@@ -172,24 +173,90 @@ int (*unitTests[])(int) = {
 
 int main(int argc, char const *argv[])
 {
-    unsigned int testsPassed = 0;
+    if (argc == 1) {
+        unsigned int testsPassed = 0;
     
-    int counter = 0;
-    while (unitTests[counter] != NULL)
-    {
-        printf("========unitTest %d========\n", counter + 1);
-        if (1 == unitTests[counter](1))
-        {
-            printf("passed test\n");
-            testsPassed++;
-        }
-        else
-        {
-            printf("failed test, missing functionality, or incorrect test\n");
-        }
-        counter++;
-    }
+        int counter = 0;
+        while (unitTests[counter] != NULL) {
+            printf("========unitTest %d========\n", counter + 1);
+            if (1 == unitTests[counter](1)) {
 
-    printf("%d of %d tests passed\n", testsPassed, counter);
-   
+                printf("passed test\n");
+                testsPassed++;
+            } else {
+                printf("failed test, missing functionality, or incorrect test\n");
+            }
+            counter++;
+        }
+        printf("%d of %d tests passed\n", testsPassed, counter);
+        return 0;
+    } else if (argc == 4 && strcmp(argv[1], "print") == 0) {
+        if (strcmp(argv[2], "random") == 0) {
+            const int size = atoi(argv[3]);
+            if (size < 0) {
+                printf("size should be a positive number.\n");
+                return 1;
+            }
+
+            BST* tree = create_bst();
+            int* array = get_random_array(size);
+
+            printf("Original Array: ");
+            for (int i = 0; i < size; i++) {
+                bst_add(tree, array[i]);
+                printf("%d ", array[i]);
+            }
+            printf("\n");
+
+            printf("Inorder: ");
+            bst_print(tree, INORDER);
+
+            printf("Preorder: ");
+            bst_print(tree, PREORDER);
+
+            printf("Postorder: ");
+            bst_print(tree, POSTORDER);
+
+            printf("Breadth First: ");
+            bst_print(tree, BREADTHFIRST);
+
+            bst_free(tree);
+            free(array);
+            return 0;
+
+        } else if (atoi(argv[2]) < atoi(argv[3])) {
+            BST* tree = create_bst();
+            int* array = get_range_array(atoi(argv[2]), atoi(argv[3]));
+
+            printf("Original Array: ");
+            for (int i = 0; i < atoi(argv[3]) - atoi(argv[2]); i++) {
+                bst_add(tree, array[i]);
+                printf("%d ", array[i]);
+            }
+            printf("\n");
+
+            printf("Inorder: ");
+            bst_print(tree, INORDER);
+
+            printf("Preorder: ");
+            bst_print(tree, PREORDER);
+
+            printf("Postorder: ");
+            bst_print(tree, POSTORDER);
+
+            printf("Breadth First: ");
+            bst_print(tree, BREADTHFIRST);
+
+            bst_free(tree);
+            free(array);
+            return 0;
+        } 
+        
+    }
+    printf("Usage: ./bst.out (Run unitests)\n");
+    printf("       ./bst.out print random <size> (Print with random array of size <size>)\n");
+    printf("       ./bst.out print <start> <end> (Print with arithmetic sequence starting at <start>\n");
+    printf("                                      ending at <end> - 1)\n");
+
+    return 1;
 }
