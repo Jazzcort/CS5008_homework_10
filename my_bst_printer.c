@@ -103,6 +103,6 @@ void bst_print(BST *tree, char *print_type)
     else if (strcmp(print_type, BREADTHFIRST) == 0) printTreeBreadthFirst(tree->root);
     else printf("Wrong print type.");
 
-    printf("\n");
+    //printf("\n");
 }
 
