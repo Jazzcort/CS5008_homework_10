@@ -2,8 +2,8 @@
  * Tree print functions. Use Lab-dfs-bfs-practice as a starting point.
  * You are free to use the solution code provided with that lab.
  * 
- * @author YOUR NAME
- * semester: YOUR SEMESTER
+ * @author Chih-Tao Lee
+ * semester: Spring 2023
 */
 
 #include "my_bst.h"
@@ -22,16 +22,31 @@ void print_single_node(Node *node)
 /** inOrder DFS print of the Tree*/
 void printTreeInOrder(Node *root)
 {
+    if (root == NULL) return;
+
+	printTreeInOrder(root->left);
+	print_single_node(root);
+	printTreeInOrder(root->right);
 }
 
 /** post order DFS print of the Tree */
 void printTreePostOrder(Node *root)
 {
+    if (root == NULL) return;
+
+	printTreePostOrder(root->left);
+	printTreePostOrder(root->right);
+	print_single_node(root);
 }
 
 /** pre order DFS print of the Tree*/
 void printTreePreOrder(Node *root)
 {
+    if (root == NULL) return;
+
+	print_single_node(root);
+	printTreePreOrder(root->left);
+	printTreePreOrder(root->right);
 }
 
 /** iterative breadth-first print of the tree*/
@@ -80,5 +95,14 @@ void printTreeBreadthFirst(Node *root)
  */
 void bst_print(BST *tree, char *print_type)
 {
+    if (tree == NULL) printf("Can't pass null as a tree.");
 
+    if (strcmp(print_type, "inorder") == 0) printTreeInOrder(tree->root);
+    else if (strcmp(print_type, "preorder") == 0) printTreePreOrder(tree->root);
+    else if (strcmp(print_type, "postorder") == 0) printTreePostOrder(tree->root);
+    else if (strcmp(print_type, "breadthfirst") == 0) printTreeBreadthFirst(tree->root);
+    else printf("Wrong print type.");
+
+    printf("\n");
 }
+
