@@ -210,15 +210,19 @@ int main(int argc, char const *argv[])
 
             printf("Inorder: ");
             bst_print(tree, INORDER);
+            printf("\n");
 
             printf("Preorder: ");
             bst_print(tree, PREORDER);
+            printf("\n");
 
             printf("Postorder: ");
             bst_print(tree, POSTORDER);
+            printf("\n");
 
             printf("Breadth First: ");
             bst_print(tree, BREADTHFIRST);
+            printf("\n");
 
             bst_free(tree);
             free(array);
@@ -237,15 +241,19 @@ int main(int argc, char const *argv[])
 
             printf("Inorder: ");
             bst_print(tree, INORDER);
+            printf("\n");
 
             printf("Preorder: ");
             bst_print(tree, PREORDER);
+            printf("\n");
 
             printf("Postorder: ");
             bst_print(tree, POSTORDER);
+            printf("\n");
 
             printf("Breadth First: ");
             bst_print(tree, BREADTHFIRST);
+            printf("\n");
 
             bst_free(tree);
             free(array);
