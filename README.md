@@ -62,4 +62,5 @@ Did you use any external resources (you do not have to cite in class material)? 
 4. What are some of the advantages of a BST over a linked list?
 - In BST, the time complexity of search, insertion, and deletion is reduced to $O(log(n))$, which make it more efficient than linked list.
 5. What are some cases / examples of when you would use a BST?
+- Because BST is very efficient in searching and sorting data, it would mainly be implemented in the system that performs high amount of searching and sorting processes. For example, a routing table to store the IP addresses or an index table of a database.
 
