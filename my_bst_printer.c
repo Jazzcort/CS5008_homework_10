@@ -97,10 +97,10 @@ void bst_print(BST *tree, char *print_type)
 {
     if (tree == NULL) printf("Can't pass null as a tree.");
 
-    if (strcmp(print_type, "inorder") == 0) printTreeInOrder(tree->root);
-    else if (strcmp(print_type, "preorder") == 0) printTreePreOrder(tree->root);
-    else if (strcmp(print_type, "postorder") == 0) printTreePostOrder(tree->root);
-    else if (strcmp(print_type, "breadthfirst") == 0) printTreeBreadthFirst(tree->root);
+    if (strcmp(print_type, INORDER) == 0) printTreeInOrder(tree->root);
+    else if (strcmp(print_type, PREORDER) == 0) printTreePreOrder(tree->root);
+    else if (strcmp(print_type, POSTORDER) == 0) printTreePostOrder(tree->root);
+    else if (strcmp(print_type, BREADTHFIRST) == 0) printTreeBreadthFirst(tree->root);
     else printf("Wrong print type.");
 
     printf("\n");
